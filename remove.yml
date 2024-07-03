@@ -1,0 +1,20 @@
+---
+
+- host: 52.168.76.34
+  become: true
+  task:
+
+
+  - update repository index
+    apt:
+      update_cache: yes
+
+  - name: install apached2 package
+    apt:
+       name: apache2
+
+ -  name: add php support for apache
+    apt:
+       name: libache2-mod-php
+       state: latest
+      
